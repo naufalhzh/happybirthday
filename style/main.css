@@ -2,9 +2,16 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .song {
@@ -18,7 +25,8 @@ body {
   position: relative;
   text-align: center;
   visibility: hidden;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .container > div {
@@ -47,7 +55,8 @@ body {
   margin: 0 auto;
   padding: 10px;
   position: relative;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .text-box p {
@@ -64,7 +73,7 @@ body {
   border-radius: 3px;
   bottom: -50px;
   color: #fff;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   position: absolute;
   right: 5px;
 }
@@ -86,14 +95,15 @@ body {
   font-size: 4rem;
 }
 
-.idea-5 span, .idea-6 span, .wish-hbd span {
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span{
+.idea-6 span {
   font-size: 15rem;
 }
-
 
 .six {
   position: relative;
@@ -102,16 +112,15 @@ body {
 }
 
 .six img {
-  display: inline-block;
-  height: 350px;
+  display: block;
+  margin: 0 auto;
+  height: auto;
   max-width: 100%;
-  /* height: auto; */
 }
 
 .six .hat {
   left: 41.5%;
   position: absolute;
-  /* transform: scale(0.1); */
   top: -35%;
   width: 80px;
 }
@@ -133,11 +142,13 @@ body {
   left: 30%;
 }
 
-.seven, .eight {
+.seven,
+.eight {
   height: 100vh;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .eight svg {
@@ -154,49 +165,41 @@ body {
   left: 5vw;
   top: 7vh;
 }
-
 .eight svg:nth-child(2) {
   fill: #7dd175;
   left: 35vw;
   top: 23vh;
 }
-
 .eight svg:nth-child(3) {
   fill: #349d8b;
   left: 23vw;
   top: 33vh;
 }
-
 .eight svg:nth-child(4) {
   fill: #347a9d;
   left: 57vw;
   top: 43vh;
 }
-
 .eight svg:nth-child(5) {
   fill: #c66053;
   left: 7vw;
   top: 68vh;
 }
-
 .eight svg:nth-child(6) {
   fill: #bfaa40;
   left: 77vw;
   top: 42vh;
 }
-
 .eight svg:nth-child(7) {
   fill: #e3bae8;
   left: 83vw;
   top: 68vh;
 }
-
 .eight svg:nth-child(8) {
   fill: #8762cb;
   left: 37vw;
   top: 86vh;
 }
-
 .eight svg:nth-child(9) {
   fill: #9a90da;
   left: 87vw;
@@ -252,11 +255,12 @@ body {
 
 @media screen and (max-width: 500px) {
   .container {
-    width: 90%;
+    width: 100%;
+    padding: 0 5%;
   }
 
   .four .text-box {
-    width: 90%;
+    width: 100%;
   }
 
   .text-box .fake-btn {
@@ -269,11 +273,10 @@ body {
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 
   .six .hat {
-    /* top: -20px; */
     width: 50px;
   }
 
@@ -287,6 +290,5 @@ body {
 
   .nine p {
     font-size: 1.5rem;
-    font-weight: lighter;
   }
 }
